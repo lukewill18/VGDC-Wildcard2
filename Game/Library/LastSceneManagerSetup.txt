@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Luke.unity
+- path: Assets/Scenes/Alexis.unity
   isLoaded: 1
   isActive: 1
