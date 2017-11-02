@@ -6,7 +6,7 @@ public class ProjectileScript : MonoBehaviour {
     public GameObject projectilePrefab;
     private List<GameObject> Projectiles = new List<GameObject>();
     private float projectileVelocity;
-
+    public Transform Rotate;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +16,9 @@ public class ProjectileScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown("Shoot"))
-        {
-            GameObject bullet = (GameObject)Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        {   
+            // rotation = transform.parent.GetComponent
+            GameObject bullet = Instantiate(projectilePrefab, transform.position, Rotate.rotation);
             Projectiles.Add(bullet);
         }
 
