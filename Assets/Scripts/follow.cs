@@ -16,7 +16,7 @@ public class follow : MonoBehaviour {
 	void Update () {
         //transform.LookAt(target.position);
 
-        if (Vector3.Distance(transform.position, target.position) > 1)
+        if (!Physics.Raycast(transform.position, target.position))
         {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
         }
