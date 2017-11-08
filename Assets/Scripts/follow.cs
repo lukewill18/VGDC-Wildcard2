@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class follow : MonoBehaviour {
 
-    public Transform target;
+    public Transform target = GameObject.FindWithTag("Player").transform;
     public float speed = .01f;
 
 	// Use this for initialization
