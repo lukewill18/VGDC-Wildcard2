@@ -5,7 +5,7 @@ using UnityEngine;
 public class GunController : MonoBehaviour {
 
 
-    public bool isFiring;
+    
     public BulletController bullet;
     public float bullet_speed;
 
@@ -36,15 +36,6 @@ public class GunController : MonoBehaviour {
             shotCounter = 0;
         }
 
-        /*
-        if (Input.GetMouseButtonDown(0)
-        {
-            isFiring = true;
-        }
-        else
-        {
-            isFiring = false;
-        }
-        */
+        
 	}
 }

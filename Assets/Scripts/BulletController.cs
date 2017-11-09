@@ -21,20 +21,13 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector2(0, 1) * speed * Time.deltaTime);
-        /*
+        
         lifeTime -= Time.deltaTime;
         if (lifeTime <= 0)
         {
             Destroy(gameObject);
         }
-        */
+        
     }
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            other.gameObject.GetComponent<EnemyHealth>().HurtEnemy(damage_given);
-            print("Damage taken is 1");
-        }
-    }
+    
 }    
