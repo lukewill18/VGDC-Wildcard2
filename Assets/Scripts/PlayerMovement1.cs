@@ -42,6 +42,8 @@ public class PlayerMovement1 : MonoBehaviour {
         }
 
         if (Input.GetKey(KeyCode.D) != true && Input.GetKey(KeyCode.A) != true && Input.GetKey(KeyCode.S) != true && Input.GetKey(KeyCode.W) != true) ;
-        moving = false;
+        {
+            moving = false;
+        }
     }
 }

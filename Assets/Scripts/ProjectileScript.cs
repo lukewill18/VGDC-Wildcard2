@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ comment from ittai:
+    dont have the bullet shoot the bullet
+    create a second script for the input of shooting and 
+    a script for the bullet flying
+    if the bullet leaves the screen space it destroys itself
+     
+     
+     */
+
 public class ProjectileScript : MonoBehaviour {
     public GameObject projectilePrefab;
     private List<GameObject> Projectiles = new List<GameObject>();
-    private float projectileVelocity;
+    public float projectileVelocity;
     public Transform Rotate;
-
+    public int damage_given;
 	// Use this for initialization
 	void Start () {
         projectileVelocity = 5;
@@ -21,6 +31,7 @@ public class ProjectileScript : MonoBehaviour {
             GameObject bullet = Instantiate(projectilePrefab, transform.position, Rotate.rotation);
             Projectiles.Add(bullet);
         }
+       
 
         for (int i = 0; i < Projectiles.Count; i++)
         {
@@ -32,10 +43,20 @@ public class ProjectileScript : MonoBehaviour {
                 Vector3 bulletScreenPos = Camera.main.WorldToScreenPoint(goBullet.transform.position);
                 if (bulletScreenPos.y >= Screen.height || bulletScreenPos.y <= 0)
                 {
-                    DestroyObject(goBullet);
                     Projectiles.Remove(goBullet);
+                    DestroyObject(goBullet);
                 }
             }
         }
-	}
+
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<EnemyHealth>().HurtEnemy(damage_given);
+            print("Damage taken is 1");
+        }
+    }
 }
