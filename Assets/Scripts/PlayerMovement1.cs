@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehavior : MonoBehaviour {
+public class PlayerMovement1 : MonoBehaviour {
     public bool moving = false;
     float speed = 5.0f;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
         movement();
-	}
+    }
 
     void movement()
     {
@@ -41,7 +41,7 @@ public class PlayerBehavior : MonoBehaviour {
             moving = true;
         }
 
-        if (Input.GetKey(KeyCode.D) != true && Input.GetKey(KeyCode.A) != true && Input.GetKey(KeyCode.S) != true && Input.GetKey(KeyCode.W) != true);
+        if (Input.GetKey(KeyCode.D) != true && Input.GetKey(KeyCode.A) != true && Input.GetKey(KeyCode.S) != true && Input.GetKey(KeyCode.W) != true) ;
         moving = false;
     }
 }
