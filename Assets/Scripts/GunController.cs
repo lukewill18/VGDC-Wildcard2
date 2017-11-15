@@ -10,7 +10,7 @@ public class GunController : MonoBehaviour {
     public BulletController bullet;
     public float bullet_speed;
 
-    Text ammo;
+    public Text ammo;
     const int MAX_AMMO = 30;
     public int ammunition;
     public int stored_ammunition;
@@ -67,5 +67,13 @@ public class GunController : MonoBehaviour {
         }
         ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition.ToString();
         isReloading = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Ammo")
+        {
+            ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;
+        }
     }
 }

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchAmmo : MonoBehaviour {
+public class TouchAmmo : MonoBehaviour 
+{
 
     public int health = 1;
     public int ammo_amount;
@@ -12,10 +13,10 @@ public class TouchAmmo : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             health--;
-
-            if (health < 0)
+            if (health <= 0)
             {
-                other.gameObject.GetComponent<GunController>().stored_ammunition += ammo_amount;
+                other.gameObject.GetComponentInChildren<GunController>().stored_ammunition += ammo_amount;
+                other.gameObject.GetComponentInChildren<GunController>().ammo.text = other.gameObject.GetComponentInChildren<GunController>().ammunition.ToString() +  "/" + other.gameObject.GetComponentInChildren<GunController>().stored_ammunition.ToString();
                 Destroy(gameObject);
             }
         }
