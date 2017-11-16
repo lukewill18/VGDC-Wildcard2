@@ -20,7 +20,6 @@ public class follow : MonoBehaviour {
         //transform.LookAt(target.position);
         if (target != null) //need to detect if player has died 
         {
-            Debug.Log("asdf");
             if (!Physics.Raycast(transform.position, target.position))
             {
                 transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
