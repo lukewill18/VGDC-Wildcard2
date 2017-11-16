@@ -11,7 +11,7 @@ public class ZombieHealth : MonoBehaviour {
         health = 3;
 	}
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Projectile")
         {
