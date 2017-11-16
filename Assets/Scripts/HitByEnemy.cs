@@ -6,7 +6,7 @@ public class HitByEnemy : MonoBehaviour
 {
     public static int health = 1;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Bile")
         {
