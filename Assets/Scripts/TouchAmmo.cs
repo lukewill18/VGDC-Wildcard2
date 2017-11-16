@@ -8,7 +8,7 @@ public class TouchAmmo : MonoBehaviour
     public int health = 1;
     public int ammo_amount;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
