@@ -2,32 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitByEnemy : MonoBehaviour
+public class ZombieHealth_Boomer : MonoBehaviour
 {
-    public static int health = 1;
+
+    public int health = 3;
+
+    public GameObject bile;
+
+    // Use this for initialization
+    void Start()
+    {
+        health = 3;
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Bile")
+        if (other.gameObject.tag == "Projectile")
         {
-            //Debug.Log("asdf");
             health--;
-
-            if(health <=0)
+            if (health <= 0)
             {
                 Die();
             }
         }
-
     }
 
     void Die()
     {
         Destroy(gameObject);
-    }
-    // Use this for initialization
-    void Start()
-    {
+        Instantiate(bile, transform.position, transform.rotation);
 
     }
 
@@ -36,5 +39,4 @@ public class HitByEnemy : MonoBehaviour
     {
 
     }
-
 }

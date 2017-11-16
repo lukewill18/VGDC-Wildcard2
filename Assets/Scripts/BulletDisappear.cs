@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitByEnemy : MonoBehaviour
+public class BulletDisappear : MonoBehaviour
 {
-    public static int health = 1;
+    public int health = 1;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Bile")
+        if (other.gameObject.tag == "Enemy")
         {
             //Debug.Log("asdf");
             health--;
 
-            if(health <=0)
+            if (health <= 0)
             {
                 Die();
             }
