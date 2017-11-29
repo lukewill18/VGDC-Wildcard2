@@ -9,64 +9,85 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1062186318818382}
+  m_RootGameObject: {fileID: 1163787812359206}
   m_IsPrefabParent: 1
---- !u!1 &1062186318818382
+--- !u!1 &1163787812359206
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4709003764957498}
-  - component: {fileID: 212665808945106764}
-  - component: {fileID: 114267723012695314}
+  - component: {fileID: 4851897815857106}
+  - component: {fileID: 212544096027540138}
+  - component: {fileID: 61279253045445702}
+  - component: {fileID: 114170005241482242}
   m_Layer: 0
-  m_Name: spawner
-  m_TagString: Untagged
+  m_Name: rocket
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4709003764957498
+--- !u!4 &4851897815857106
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062186318818382}
+  m_GameObject: {fileID: 1163787812359206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.02, y: 3.01, z: 0}
-  m_LocalScale: {x: 0.57564753, y: 0.57564753, z: 0.57564753}
+  m_LocalPosition: {x: 5.551, y: 1.901, z: 0}
+  m_LocalScale: {x: 0.2924368, y: 0.2924368, z: 0.2924368}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114267723012695314
+--- !u!61 &61279253045445702
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1163787812359206}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 5.12}
+  m_EdgeRadius: 0
+--- !u!114 &114170005241482242
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062186318818382}
+  m_GameObject: {fileID: 1163787812359206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6d2b8286a3d3e41bfb313001f18e57, type: 3}
+  m_Script: {fileID: 11500000, guid: 17a92d8fa7f7ca743a470d6c8d2a1cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn_delay: 3
-  spawn_time: 6
-  enemies:
-  - {fileID: 1706836375120684, guid: 10ff62fae2812f74e800b86bef054199, type: 2}
-  - {fileID: 1706836375120684, guid: 10ff62fae2812f74e800b86bef054199, type: 2}
-  - {fileID: 1706836375120684, guid: 10ff62fae2812f74e800b86bef054199, type: 2}
-  - {fileID: 1706836375120684, guid: 10ff62fae2812f74e800b86bef054199, type: 2}
-  - {fileID: 1706836375120684, guid: 10ff62fae2812f74e800b86bef054199, type: 2}
-  current_enemy: 0
---- !u!212 &212665808945106764
+  speed: 3
+  lifeTime: 4
+  damage_given: 5
+  blast: {fileID: 1896711980655324, guid: 3ad7a98ce9acebb4bb847a12943a073a, type: 2}
+--- !u!212 &212544096027540138
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062186318818382}
+  m_GameObject: {fileID: 1163787812359206}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -95,12 +116,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e0d0976eed9bc64ebc90157b15908b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 887d6a7abf3fae54589c60e7f8169ef5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
