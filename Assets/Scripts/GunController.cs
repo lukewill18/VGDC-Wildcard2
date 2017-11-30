@@ -11,11 +11,11 @@ public class GunController : MonoBehaviour {
     public float bullet_speed;
 
     public Text ammo;
-    const int MAX_AMMO = 30;
+    public int MAX_AMMO = 30;
     public int ammunition;
     public int stored_ammunition;
     public float timer, fireRate;
-    string ammoDisplay;
+    public string ammoDisplay;
     bool isReloading;
   
 
@@ -31,27 +31,13 @@ public class GunController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timer += Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.R) && stored_ammunition > 0)
-        {
-            StartCoroutine(Reload());
-        }
-
-		if (Input.GetMouseButton(0) && ammunition > 0 && timer > fireRate && !isReloading)
-        {
-            ammunition--;
-            BulletController newBullet = Instantiate(bullet, fire_position.position, fire_position.rotation);
-            newBullet.speed = bullet_speed;
-            ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;
-            timer = 0;
-        }
-       
+        
+		shoot_and_reload();
 
         
 	}
 
-    IEnumerator Reload()
+    protected virtual IEnumerator Reload()
     {
         isReloading = true;
         yield return new WaitForSeconds(1);
@@ -76,4 +62,23 @@ public class GunController : MonoBehaviour {
             ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;
         }
     }
+
+	protected virtual void shoot_and_reload() 
+	{
+		timer += Time.deltaTime;
+
+		if (Input.GetKeyDown(KeyCode.R) && stored_ammunition > 0)
+		{
+			StartCoroutine(Reload());
+		}
+
+		if (Input.GetMouseButton(0) && ammunition > 0 && timer > fireRate && !isReloading)
+		{
+			ammunition--;
+			BulletController newBullet = Instantiate(bullet, fire_position.position, fire_position.rotation);
+			newBullet.speed = bullet_speed;
+			ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;
+			timer = 0;
+		}
+	}
 }
