@@ -52,7 +52,7 @@ public class ZombieShotController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall") //give walls tag
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
         }

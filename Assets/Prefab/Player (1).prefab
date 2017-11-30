@@ -166,10 +166,10 @@ MonoBehaviour:
   bullet: {fileID: 114016956766609720, guid: 39b8c32893a229e41a37af3bd2c7ac06, type: 2}
   bullet_speed: 10
   ammo: {fileID: 0}
-  ammunition: 0
+  ammunition: 30
   stored_ammunition: 30
   timer: 0
-  fireRate: 0
+  fireRate: 0.1
   fire_position: {fileID: 4262226150573410}
 --- !u!114 &114602368416200546
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff3fa2d9b7165343bbb4607b9baa81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 5
 --- !u!114 &114816646712568380
 MonoBehaviour:
   m_ObjectHideFlags: 1
