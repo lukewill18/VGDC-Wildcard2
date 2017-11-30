@@ -20,11 +20,17 @@ public class ZombieHealth_Boomer : MonoBehaviour
         if (other.gameObject.tag == "Projectile")
         {
             health--;
-            if (health <= 0)
-            {
-                Die();
-            }
         }
+        else if (other.gameObject.tag == "Rocket")
+        {
+            health = health - 3;
+        }
+
+        if (health <= 0)
+        {
+            Die();
+        }
+        
     }
 
     void Die()
