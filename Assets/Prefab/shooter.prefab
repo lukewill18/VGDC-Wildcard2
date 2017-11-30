@@ -24,8 +24,9 @@ GameObject:
   - component: {fileID: 58725374829987154}
   - component: {fileID: 50974234501837546}
   - component: {fileID: 114782894544314750}
+  - component: {fileID: 114651195733269334}
   m_Layer: 0
-  m_Name: shooter-temp
+  m_Name: shooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,6 +92,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+--- !u!114 &114651195733269334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012472498550310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acdcc14a709de0a4cb7e476f9bf3404e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 0.01
 --- !u!114 &114782894544314750
 MonoBehaviour:
   m_ObjectHideFlags: 1
