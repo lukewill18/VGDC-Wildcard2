@@ -2,48 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement1 : MonoBehaviour {
-    public bool moving = false;
-    float speed = 5.0f;
-    // Use this for initialization
-    void Start() {
+public class PlayerMovement1 : MonoBehaviour
+{
 
+    public float moveSpeed;
+    private Rigidbody2D myRigidbody;
+
+    private Vector2 moveInput;
+    private Vector2 moveVelocity;
+
+    // Use this for initialization
+    void Start()
+    {
+        myRigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update() {
-        movement();
-    }
-
-    void movement()
+    void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);
-            moving = true;
-        }
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"),  Input.GetAxisRaw("Vertical"));
+        moveVelocity = moveInput * moveSpeed;
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetAxisRaw("Horizontal") >= 1 && Input.GetAxisRaw("Vertical") >= 1)
         {
-            transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
-            moving = true;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
-            moving = true;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
-            moving = true;
-        }
-
-        if (Input.GetKey(KeyCode.D) != true && Input.GetKey(KeyCode.A) != true && Input.GetKey(KeyCode.S) != true && Input.GetKey(KeyCode.W) != true) ;
-        {
-            moving = false;
+            Vector2 movement_vector = new Vector2(Input.GetAxisRaw("Horizontal") / 2, Input.GetAxisRaw("Vertical") / 2);
         }
     }
-}
+
+    void FixedUpdate() {
+        myRigidbody.velocity = moveVelocity;
+    }
+}   

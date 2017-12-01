@@ -20,7 +20,7 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector2(0, 1) * speed * Time.deltaTime);
+        transform.Translate(new Vector2(0,2) * speed * Time.deltaTime);
         
         lifeTime -= Time.deltaTime;
         if (lifeTime <= 0)

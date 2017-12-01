@@ -3,41 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GunController : MonoBehaviour {
+public class RL_Controller : MonoBehaviour {
 
-
-    
-    public BulletController bullet;
-    public float bullet_speed;
+    public RocketController rocket;
+    public float rocket_speed;
 
     public Text ammo;
-    public int MAX_AMMO = 30;
+    const int MAX_AMMO = 5;
     public int ammunition;
     public int stored_ammunition;
     public float timer, fireRate;
-    public string ammoDisplay;
+    string ammoDisplay;
     bool isReloading;
-  
 
     public Transform fire_position;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         ammo = GameObject.Find("Canvas/AmmoCounter").GetComponent<Text>();
         ammunition = MAX_AMMO;
-		ammoDisplay = "/";
+        ammoDisplay = "/";
         fireRate = 0.1f;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        
-		shoot_and_reload();
+        timer += Time.deltaTime;
 
-        
-	}
+        if (Input.GetKeyDown(KeyCode.R) && stored_ammunition > 0)
+        {
+            StartCoroutine(Reload());
+        }
 
-    protected virtual IEnumerator Reload()
+        if (Input.GetMouseButton(0) && ammunition > 0 && timer > fireRate && !isReloading)
+        {
+            ammunition--;
+            RocketController newRocket = Instantiate(rocket, fire_position.position, fire_position.rotation);
+            newRocket.speed = rocket_speed;
+            ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;
+            timer = 0;
+        }
+    }
+
+    IEnumerator Reload()
     {
         isReloading = true;
         yield return new WaitForSeconds(1);
@@ -62,23 +70,5 @@ public class GunController : MonoBehaviour {
             ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;
         }
     }
-
-	protected virtual void shoot_and_reload() 
-	{
-		timer += Time.deltaTime;
-
-		if (Input.GetKeyDown(KeyCode.R) && stored_ammunition > 0)
-		{
-			StartCoroutine(Reload());
-		}
-
-		if (Input.GetMouseButton(0) && ammunition > 0 && timer > fireRate && !isReloading)
-		{
-			ammunition--;
-			BulletController newBullet = Instantiate(bullet, fire_position.position, fire_position.rotation);
-			newBullet.speed = bullet_speed;
-			ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;
-			timer = 0;
-		}
-	}
 }
+

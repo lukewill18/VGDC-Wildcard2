@@ -16,10 +16,14 @@ public class ZombieHealth : MonoBehaviour {
         if (other.gameObject.tag == "Projectile")
         {
             health--;
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
+        }
+        else if(other.gameObject.tag == "Rocket")
+        {
+            health = health - 3;
+        }
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
             // Update is called once per frame
