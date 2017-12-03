@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SniperScript : MonoBehaviour {
-
-
-
+public class PistolScript : MonoBehaviour {
 	public BulletController bullet;
 	public float bullet_speed;
 
 	public Text ammo;
-	public int MAX_AMMO;
+	public int MAX_AMMO = 12;
 	public int ammunition;
 	public int stored_ammunition;
 	public float timer, fireRate;
@@ -26,7 +23,7 @@ public class SniperScript : MonoBehaviour {
 		ammo = GameObject.Find("Canvas/AmmoCounter").GetComponent<Text>();
 		ammunition = MAX_AMMO;
 		ammoDisplay = "/";
-		fireRate = .1f;
+
 	}
 
 	// Update is called once per frame
@@ -34,6 +31,7 @@ public class SniperScript : MonoBehaviour {
 
 		shoot_and_reload();
 		ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition.ToString();
+
 
 	}
 
