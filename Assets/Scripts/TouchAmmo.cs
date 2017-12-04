@@ -15,8 +15,8 @@ public class TouchAmmo : MonoBehaviour
             health--;
             if (health <= 0)
             {
-                other.gameObject.GetComponentInChildren<GunController>().stored_ammunition += ammo_amount;
-                other.gameObject.GetComponentInChildren<GunController>().ammo.text = other.gameObject.GetComponentInChildren<GunController>().ammunition.ToString() +  "/" + other.gameObject.GetComponentInChildren<GunController>().stored_ammunition.ToString();
+				other.gameObject.GetComponentInChildren<GunController>().stored_ammunition += ammo_amount;
+				other.gameObject.GetComponentInChildren<GunController>().ammo.text = other.gameObject.GetComponentInChildren<GunController>().ammunition.ToString() +  "/" + other.gameObject.GetComponentInChildren<GunController>().stored_ammunition.ToString();
                 Destroy(gameObject);
             }
         }
