@@ -26,7 +26,7 @@ public class SniperScript : MonoBehaviour {
 		ammo = GameObject.Find("Canvas/AmmoCounter").GetComponent<Text>();
 		ammunition = MAX_AMMO;
 		ammoDisplay = "/";
-		fireRate = .1f;
+		fireRate = .9f;
 	}
 
 	// Update is called once per frame
