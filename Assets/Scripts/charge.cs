@@ -5,13 +5,15 @@ using UnityEngine;
 public class charge : MonoBehaviour {
 
     public GameObject target;
-    public float speed = .35f;
+    public float speed = .15f;
 
-    public float charge_delay = 1f;
+    public float charge_delay = 2f;
 
     public float time_between_charges = 4f;
 
     private bool charging = false;
+
+    public bool seen;
 
     public Vector3 charge_position;
     // Use this for initialization
@@ -22,12 +24,22 @@ public class charge : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
-	void charge_player () {
+    void OnBecameVisible()
+    {
+        seen = true;
+    }
+
+    void OnBecameInvisible()
+    {
+        seen = false;
+    }
+
+    // Update is called once per frame
+    void charge_player () {
         if (GameObject.FindWithTag("Player") != null)
         {
             target = GameObject.FindWithTag("Player");
-            if (!Physics.Raycast(transform.position, target.transform.position))
+			if (!Physics.Raycast(transform.position, target.transform.position) && seen)
             {
                 charging = true;
                 charge_position = target.transform.position;

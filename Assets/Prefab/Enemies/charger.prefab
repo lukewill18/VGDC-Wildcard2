@@ -103,9 +103,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 0.35
-  charge_delay: 1
+  speed: 0.15
+  charge_delay: 2
   time_between_charges: 4
+  seen: 0
   charge_position: {x: 0, y: 0, z: 0}
 --- !u!212 &212616230331038824
 SpriteRenderer:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZombieShotController : MonoBehaviour {
 
-    public float speed = 2f;
+    public float speed = 6f;
 
     public float lifeTime = 3f;
 
