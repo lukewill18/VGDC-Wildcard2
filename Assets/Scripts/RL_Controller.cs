@@ -9,7 +9,7 @@ public class RL_Controller : MonoBehaviour {
     public float rocket_speed;
 
     public Text ammo;
-    const int MAX_AMMO = 5;
+    const int MAX_AMMO = 1;
     public int ammunition;
     public int stored_ammunition;
     public float timer, fireRate;
@@ -23,7 +23,7 @@ public class RL_Controller : MonoBehaviour {
         ammo = GameObject.Find("Canvas/AmmoCounter").GetComponent<Text>();
         ammunition = MAX_AMMO;
         ammoDisplay = "/";
-        fireRate = 0.1f;
+     
     }
 	
 	// Update is called once per frame
@@ -35,7 +35,7 @@ public class RL_Controller : MonoBehaviour {
             StartCoroutine(Reload());
         }
 
-        if (Input.GetMouseButton(0) && ammunition > 0 && timer > fireRate && !isReloading)
+        if (Input.GetMouseButtonDown(0) && ammunition > 0 && timer > fireRate && !isReloading)
         {
             ammunition--;
             RocketController newRocket = Instantiate(rocket, fire_position.position, fire_position.rotation);
@@ -43,6 +43,9 @@ public class RL_Controller : MonoBehaviour {
             ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;
             timer = 0;
         }
+
+		ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition.ToString();
+
     }
 
     IEnumerator Reload()
