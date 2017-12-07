@@ -9,6 +9,11 @@ public class levelcontroller : MonoBehaviour
     private bool nextLevel = false;
     public string nextLevelName;
 
+    void Start()
+    {
+        StartCoroutine(Wait());
+    }
+
     void Update()
     {
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -20,6 +25,11 @@ public class levelcontroller : MonoBehaviour
         {
             StartCoroutine(ChangeLevel());
         }
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(5);
     }
     private IEnumerator ChangeLevel()
     {
