@@ -155,10 +155,10 @@ RectTransform:
   m_Father: {fileID: 224391329320351346}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.49452555, y: 0.4935065}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -219.1, y: -187.3}
-  m_SizeDelta: {x: 97, y: 98}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -169.37373, y: -137.62468}
+  m_SizeDelta: {x: 97.54744, y: 98.64935}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224391329320351346
 RectTransform:
