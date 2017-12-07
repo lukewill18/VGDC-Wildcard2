@@ -9,20 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1680934500186110}
+  m_RootGameObject: {fileID: 1538367540875558}
   m_IsPrefabParent: 1
---- !u!1 &1680934500186110
+--- !u!1 &1538367540875558
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4882912543470620}
-  - component: {fileID: 212002259362676266}
-  - component: {fileID: 114668833168542312}
-  - component: {fileID: 58699001209087554}
-  - component: {fileID: 50257090664359234}
+  - component: {fileID: 4939146995951530}
+  - component: {fileID: 212713084746980914}
+  - component: {fileID: 114650794757512186}
+  - component: {fileID: 58821376417127688}
+  - component: {fileID: 50084844541897976}
   m_Layer: 0
   m_Name: bile
   m_TagString: Bile
@@ -30,26 +30,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4882912543470620
+--- !u!4 &4939146995951530
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680934500186110}
+  m_GameObject: {fileID: 1538367540875558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 1.73, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalPosition: {x: 4.252, y: -0.251, z: 0}
+  m_LocalScale: {x: 0.862953, y: 0.914512, z: 0.862953}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50257090664359234
+--- !u!50 &50084844541897976
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680934500186110}
+  m_GameObject: {fileID: 1538367540875558}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -63,12 +63,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!58 &58699001209087554
+--- !u!58 &58821376417127688
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680934500186110}
+  m_GameObject: {fileID: 1538367540875558}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -77,24 +77,24 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.11
---- !u!114 &114668833168542312
+  m_Radius: 1.5
+--- !u!114 &114650794757512186
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680934500186110}
+  m_GameObject: {fileID: 1538367540875558}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3df0a7fe0dd852e4e8b31072b2e51dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &212002259362676266
+--- !u!212 &212713084746980914
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680934500186110}
+  m_GameObject: {fileID: 1538367540875558}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
