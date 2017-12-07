@@ -9,6 +9,8 @@ public class levelcontroller : MonoBehaviour
     private bool nextLevel = false;
     public string nextLevelName;
 
+    public float switch_delay = 2f;
+
     void Start()
     {
         StartCoroutine(Wait());
