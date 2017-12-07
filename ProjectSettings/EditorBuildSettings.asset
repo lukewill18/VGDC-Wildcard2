@@ -14,3 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Matthew.unity
     guid: 4572b7495d33c7a48a45ee54018d2bb5
+  - enabled: 1
+    path: Assets/Scenes/Luke.unity
+    guid: 8cb5d7197ccdbea42b4e55ea0df5c5a4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Boomers.unity
+    guid: 267e2c847a428f14697f93c49425c64f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Chargers.unity
+    guid: 8b535f0394702584f9e13877609cac1b
+  - enabled: 1
+    path: Assets/Scenes/Levels/Shooters.unity
+    guid: 7968eb4b18de99b469ec123adb3c8c2f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Test.unity
+    guid: 96764b277167a2143b016768dcc25294
