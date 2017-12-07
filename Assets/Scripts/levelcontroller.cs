@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class levelcontroller : MonoBehaviour
 {
 
-    public bool nextLevel = false;
+    private bool nextLevel = false;
     public string nextLevelName;
 
     void Update()
@@ -18,7 +18,14 @@ public class levelcontroller : MonoBehaviour
         }
         if (nextLevel)
         {
-            SceneManager.LoadScene(nextLevelName, LoadSceneMode.Single);
+            StartCoroutine(ChangeLevel());
         }
     }
+    private IEnumerator ChangeLevel()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(nextLevelName, LoadSceneMode.Single);
+    }
 }
+
+
