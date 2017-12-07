@@ -33,11 +33,12 @@ public class GunController : MonoBehaviour {
 	void Update () {
         
 		shoot_and_reload();
+		ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition.ToString();
 
         
 	}
 
-    protected virtual IEnumerator Reload()
+  	IEnumerator Reload()
     {
         isReloading = true;
         yield return new WaitForSeconds(1);

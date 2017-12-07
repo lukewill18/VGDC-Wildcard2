@@ -5,13 +5,18 @@ using UnityEngine;
 public class charge : MonoBehaviour {
 
     public GameObject target;
-    public float speed = .35f;
+    public float speed = .15f;
 
-    public float charge_delay = 1f;
+    public float charge_delay = 2f;
 
     public float time_between_charges = 4f;
 
     private bool charging = false;
+
+    public bool seen;
+
+    private Vector3 v_diff;
+    private float atan2;
 
     public Vector3 charge_position;
     // Use this for initialization
@@ -22,12 +27,22 @@ public class charge : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
-	void charge_player () {
+    void OnBecameVisible()
+    {
+        seen = true;
+    }
+
+    void OnBecameInvisible()
+    {
+        seen = false;
+    }
+
+    // Update is called once per frame
+    void charge_player () {
         if (GameObject.FindWithTag("Player") != null)
         {
             target = GameObject.FindWithTag("Player");
-            if (!Physics.Raycast(transform.position, target.transform.position))
+			if (!Physics.Raycast(transform.position, target.transform.position) && seen)
             {
                 charging = true;
                 charge_position = target.transform.position;
@@ -40,6 +55,9 @@ public class charge : MonoBehaviour {
     {
         if(charging)
         {
+            v_diff = (charge_position - transform.position);
+            atan2 = Mathf.Atan2(v_diff.y, v_diff.x);
+            transform.rotation = Quaternion.Euler(0f, 0f, atan2 * Mathf.Rad2Deg);
             transform.position = Vector3.MoveTowards(transform.position, charge_position, speed);
 
         }

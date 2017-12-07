@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50974234501837546}
   - component: {fileID: 114782894544314750}
   - component: {fileID: 114651195733269334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ Transform:
   m_GameObject: {fileID: 1012472498550310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.45, y: 0.88, z: 0}
-  m_LocalScale: {x: 0.50223565, y: 0.50223565, z: 0.50223565}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +79,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.4899999
+  m_Radius: 1.1
 --- !u!114 &114627965756633876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,12 +154,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c4bef2a08e16284419fb212b13b1bf72, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 18cca628c4cf5654990833d44829a98c, type: 3}
+  m_Color: {r: 0, g: 0.8758622, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.98, y: 2.97}
+  m_Size: {x: 6, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

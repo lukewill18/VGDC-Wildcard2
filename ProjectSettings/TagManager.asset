@@ -9,6 +9,8 @@ TagManager:
   - Bile
   - Rocket
   - Wall
+  - SniperProjectile
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - 
   - Zombie projectiles
   - Player
-  - 
+  - Zombies
   - 
   - 
   - 

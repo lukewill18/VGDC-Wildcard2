@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114851624284301958}
   - component: {fileID: 61987615041946834}
   - component: {fileID: 114504884693834452}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shotgun pellet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  lifeTime: 10
+  lifeTime: 1
   damage_given: 1
 --- !u!212 &212454565117950020
 SpriteRenderer:

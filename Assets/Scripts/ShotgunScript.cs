@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ShotgunScript : MonoBehaviour
 {
 	public int shotFragments = 3;
-	public float spreadangle = 10.0f;
 	public BulletController bullet;
 	public float bullet_speed;
 
@@ -24,7 +23,6 @@ public class ShotgunScript : MonoBehaviour
 	private void shoot_and_reload()
 	{
 		timer += Time.deltaTime;
-		print (fire_position.rotation.eulerAngles.z);
 		if (Input.GetKeyDown(KeyCode.R) && stored_ammunition > 0)
 		{
 			StartCoroutine(Reload());
@@ -33,10 +31,8 @@ public class ShotgunScript : MonoBehaviour
 		{
 			ammunition--;
 			BulletController newBullet1 = Instantiate(bullet, fire_position.position, (Quaternion.Euler(new Vector3(0,0,315+fire_position.rotation.eulerAngles.z))));
-			Debug.Log (newBullet1.transform.rotation);
 			BulletController newBullet2 = Instantiate(bullet, fire_position.position, fire_position.rotation);
 			BulletController newBullet3 = Instantiate(bullet, fire_position.position, Quaternion.Euler(new Vector3(0,0,45+fire_position.rotation.eulerAngles.z)));
-			Debug.Log (newBullet3.transform.rotation);
 
 			newBullet1.speed = bullet_speed;
 			newBullet2.speed = bullet_speed;
@@ -70,7 +66,6 @@ public class ShotgunScript : MonoBehaviour
 		ammo = GameObject.Find("Canvas/AmmoCounter").GetComponent<Text>();
 		ammunition = MAX_AMMO;
 		ammoDisplay = "/";
-		ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition.ToString();
 		fireRate = 0.5f;
 	}
 	
@@ -79,6 +74,7 @@ public class ShotgunScript : MonoBehaviour
 	{
 
 		shoot_and_reload ();
+		ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition.ToString();
 	}
 		
 }

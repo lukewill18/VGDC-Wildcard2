@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZombieShotController : MonoBehaviour {
 
-    public float speed = 2f;
+    public float speed = 6f;
 
     public float lifeTime = 3f;
 
@@ -25,9 +25,17 @@ public class ZombieShotController : MonoBehaviour {
         }
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         if(transform.position == target)
         {
@@ -50,11 +58,5 @@ public class ZombieShotController : MonoBehaviour {
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall")
-        {
-            Destroy(gameObject);
-        }
-    }
+
 }

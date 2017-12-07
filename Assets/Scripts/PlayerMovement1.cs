@@ -25,7 +25,7 @@ public class PlayerMovement1 : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") >= 1 && Input.GetAxisRaw("Vertical") >= 1)
         {
-            Vector2 movement_vector = new Vector2(Input.GetAxisRaw("Horizontal") / 2, Input.GetAxisRaw("Vertical") / 2);
+            moveInput = new Vector2(Input.GetAxisRaw("Horizontal") / Mathf.Sqrt(2), Input.GetAxisRaw("Vertical") /Mathf.Sqrt(2));
         }
     }
 

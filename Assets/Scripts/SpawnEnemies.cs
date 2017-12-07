@@ -12,6 +12,8 @@ public class SpawnEnemies : MonoBehaviour {
 
     public int current_enemy = 0;
 
+    public bool done_spawning = false;
+
 	// Use this for initialization
 	void Start () {
 
@@ -20,10 +22,14 @@ public class SpawnEnemies : MonoBehaviour {
 	
     void Spawn()
     {
-        if(current_enemy <= enemies.Length)
+        if(!done_spawning && current_enemy < enemies.Length)
         {
             Instantiate(enemies[current_enemy], transform.position, transform.rotation);
             current_enemy++;
+        }
+        else
+        {
+            done_spawning = true;
         }
 
     }
