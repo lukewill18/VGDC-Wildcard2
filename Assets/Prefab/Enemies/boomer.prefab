@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58549158626096270}
   - component: {fileID: 50138311629932424}
   - component: {fileID: 114264529727720626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boomer
   m_TagString: Enemy
   m_Icon: {fileID: 0}

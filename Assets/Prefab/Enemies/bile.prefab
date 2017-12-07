@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114650794757512186}
   - component: {fileID: 58821376417127688}
   - component: {fileID: 50084844541897976}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bile
   m_TagString: Bile
   m_Icon: {fileID: 0}
