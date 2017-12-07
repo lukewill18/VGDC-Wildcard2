@@ -8,7 +8,7 @@ public class HitByEnemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Bile")
+        if (other.gameObject.tag == "Enemy")
         {
             //Debug.Log("asdf");
             health--;
@@ -19,6 +19,19 @@ public class HitByEnemy : MonoBehaviour
             }
         }
 
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Bile")
+        {
+            health--;
+
+            if(health <=0)
+            {
+                Die();
+            }
+        }
     }
 
     void Die()
