@@ -32,7 +32,7 @@ public class levelcontroller : MonoBehaviour
 
     private IEnumerator ChangeLevel()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(nextLevelName, LoadSceneMode.Single);
     }
 }

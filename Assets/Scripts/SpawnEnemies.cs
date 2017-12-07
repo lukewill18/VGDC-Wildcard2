@@ -22,7 +22,7 @@ public class SpawnEnemies : MonoBehaviour {
 	
     void Spawn()
     {
-        if(current_enemy <= enemies.Length)
+        if(!done_spawning && current_enemy < enemies.Length)
         {
             Instantiate(enemies[current_enemy], transform.position, transform.rotation);
             current_enemy++;
