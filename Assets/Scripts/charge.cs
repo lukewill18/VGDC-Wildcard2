@@ -15,6 +15,9 @@ public class charge : MonoBehaviour {
 
     public bool seen;
 
+    private Vector3 v_diff;
+    private float atan2;
+
     public Vector3 charge_position;
     // Use this for initialization
     void Start () {
@@ -52,6 +55,9 @@ public class charge : MonoBehaviour {
     {
         if(charging)
         {
+            v_diff = (charge_position - transform.position);
+            atan2 = Mathf.Atan2(v_diff.y, v_diff.x);
+            transform.rotation = Quaternion.Euler(0f, 0f, atan2 * Mathf.Rad2Deg);
             transform.position = Vector3.MoveTowards(transform.position, charge_position, speed);
 
         }
