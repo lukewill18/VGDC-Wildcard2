@@ -29,7 +29,7 @@ public class levelcontroller : MonoBehaviour
 
     private IEnumerator Wait()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
     }
     private IEnumerator ChangeLevel()
     {
