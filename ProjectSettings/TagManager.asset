@@ -10,6 +10,7 @@ TagManager:
   - Rocket
   - Wall
   - SniperProjectile
+  - Spawner
   layers:
   - Default
   - TransparentFX
