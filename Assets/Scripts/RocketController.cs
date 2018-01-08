@@ -40,6 +40,8 @@ public class RocketController : MonoBehaviour
     void explode()
     {
         Destroy(gameObject);
+		AudioSource shot_sound = GetComponent<AudioSource> ();
+		shot_sound.Play ();
         Instantiate(blast, transform.position, transform.rotation);
     }
 }
