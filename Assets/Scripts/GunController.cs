@@ -76,6 +76,8 @@ public class GunController : MonoBehaviour {
 		if (Input.GetMouseButton(0) && ammunition > 0 && timer > fireRate && !isReloading)
 		{
 			ammunition--;
+			AudioSource shot_sound = GetComponent<AudioSource> ();
+			shot_sound.Play ();
 			BulletController newBullet = Instantiate(bullet, fire_position.position, fire_position.rotation);
 			newBullet.speed = bullet_speed;
 			ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;

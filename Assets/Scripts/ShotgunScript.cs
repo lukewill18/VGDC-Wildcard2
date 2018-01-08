@@ -34,6 +34,9 @@ public class ShotgunScript : MonoBehaviour
 			BulletController newBullet2 = Instantiate(bullet, fire_position.position, fire_position.rotation);
 			BulletController newBullet3 = Instantiate(bullet, fire_position.position, Quaternion.Euler(new Vector3(0,0,45+fire_position.rotation.eulerAngles.z)));
 
+			AudioSource shot_sound = GetComponent<AudioSource> ();
+			shot_sound.Play ();
+
 			newBullet1.speed = bullet_speed;
 			newBullet2.speed = bullet_speed;
 			newBullet3.speed = bullet_speed;

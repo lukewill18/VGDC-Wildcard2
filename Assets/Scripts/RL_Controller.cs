@@ -38,6 +38,8 @@ public class RL_Controller : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && ammunition > 0 && timer > fireRate && !isReloading)
         {
             ammunition--;
+			AudioSource shot_sound = GetComponent<AudioSource> ();
+			shot_sound.Play ();
             RocketController newRocket = Instantiate(rocket, fire_position.position, fire_position.rotation);
             newRocket.speed = rocket_speed;
             ammo.text = ammunition.ToString() + ammoDisplay + stored_ammunition;

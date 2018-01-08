@@ -6,7 +6,6 @@ public class ZombieHealth_Boomer : MonoBehaviour
 {
 
     public int health = 3;
-
     public GameObject bile;
 
     // Use this for initialization
