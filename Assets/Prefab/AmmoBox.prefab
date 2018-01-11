@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212596068451389514}
   - component: {fileID: 61938484281417550}
   - component: {fileID: 114433391030818478}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AmmoBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
