@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6808b51452246be48bab2fdcbb1296c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo_drop: {fileID: 0}
+  ammo_drop: {fileID: 4996572813802972, guid: f952280c644710641a02be672c6cd385, type: 2}
   health: 3
 --- !u!114 &114329878188549412
 MonoBehaviour:
