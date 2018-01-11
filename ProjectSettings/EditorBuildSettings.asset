@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UI Stuff/UI-Main menu/Scenes/Controls.unity
     guid: e31151469f9db41bb99384b804f43c3d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Matthew.unity
     guid: 4572b7495d33c7a48a45ee54018d2bb5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Luke.unity
     guid: 8cb5d7197ccdbea42b4e55ea0df5c5a4
   - enabled: 1
