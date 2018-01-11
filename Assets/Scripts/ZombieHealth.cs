@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ZombieHealth : MonoBehaviour {
 
+	public Transform ammo_drop;
     public int health = 3;
 
 	// Use this for initialization
@@ -25,6 +26,9 @@ public class ZombieHealth : MonoBehaviour {
         if (health <= 0)
         {
             Destroy(gameObject);
+			if (Random.value <= 0.2f){
+				Instantiate (ammo_drop, transform.position, Quaternion.identity);
+			}
         }
     }
             // Update is called once per frame
