@@ -642,6 +642,8 @@ GameObject:
   m_Component:
   - component: {fileID: 724117569}
   - component: {fileID: 724117568}
+  - component: {fileID: 724117570}
+  - component: {fileID: 724117571}
   m_Layer: 0
   m_Name: levelcontroller
   m_TagString: Untagged
@@ -674,6 +676,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &724117570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 724117567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451499eafdf99f8478353fa3c6073239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &724117571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 724117567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451499eafdf99f8478353fa3c6073239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &743378013
 Prefab:
   m_ObjectHideFlags: 0
